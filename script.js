@@ -38,7 +38,7 @@ const themeData = [
         htmlFile: "themes/Catppuccin Mocha/catppuccinmocha.html"
     },
     {
-        name: "Vanilla UI Dark",
+        name: "Vanilla UI - Dark",
         author: "legiana",
         image: "themes/Vanilla UI - Dark/vanillauidark.png",
         htmlFile: "themes/Vanilla UI - Dark/vanillauidark.html"
