@@ -134,3 +134,20 @@ button {
     cursor: pointer;
     border-radius: 4px;
 }
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+    footer a {
+        color: white; /* Link color */
+        text-decoration: none; /* Remove underline */
+    }
+
+        footer a:hover {
+            text-decoration: underline; /* Add underline on hover (optional) */
+        }
