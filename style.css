@@ -1,0 +1,120 @@
+/* Basic styling - Customize as needed */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* General header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+/* More specific header styles for the theme detail page */
+.theme-detail header {
+    display: flex;
+    align-items: center;
+}
+
+/* Center the main header title */
+.main-header-title {
+    text-align: center;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+.theme-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+    transition: transform 0.2s; /* Add a transition effect */
+}
+
+    .theme-card:hover {
+        transform: scale(1.05); /* Make card slightly larger on hover */
+    }
+
+    .theme-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+/* Theme Detail Page */
+.theme-detail {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+    /* Image Container (New)*/
+    .theme-detail img {
+        /* Remove fixed width */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex: 0 0 60%; /* Image takes 60%, won't shrink, won't grow beyond 60% */
+    }
+
+.theme-info {
+    flex: 1; /* Theme info takes remaining space */
+}
+
+    .theme-info h1 {
+        margin-bottom: 10px; /* Space below the title */
+    }
+
+    .theme-info .author {
+        font-size: 0.9em; /* Slightly smaller author text */
+        color: #555; /* Lighter color for author */
+        margin-bottom: 15px; /* Space below author */
+    }
+
+    .theme-info p {
+        line-height: 1.6; /* Adjust line spacing as needed */
+        margin-bottom: 15px;
+    }
+
+#import-code {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-family: monospace;
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Optional: Style the Copy Code button */
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
