@@ -4,56 +4,56 @@ const themeData = [
     {
         name: "Windows XP",
         author: "gaypotatoemma",
-        image: "Themes/Windows XP/windowsxp.png",
-        htmlFile: "Themes/Windows XP/windowsxp.html"
+        image: "themes/Windows XP/windowsxp.png",
+        htmlFile: "themes/Windows XP/windowsxp.html"
     },
     {
         name: "Windows 98",
         author: "gaypotatoemma",
-        image: "Themes/Windows 98/windows98.png",
-        htmlFile: "Themes/Windows 98/windows98.html"
+        image: "themes/Windows 98/windows98.png",
+        htmlFile: "themes/Windows 98/windows98.html"
     },
     {
         name: "Ubuntu",
         author: "gaypotatoemma",
-        image: "Themes/Ubuntu/ubuntu.png",
-        htmlFile: "Themes/Ubuntu/ubuntu.html"
+        image: "themes/Ubuntu/ubuntu.png",
+        htmlFile: "themes/Ubuntu/ubuntu.html"
     },
     {
         name: "Aetheris UI",
         author: "bonsaibnuuy",
-        image: "Themes/Aetheris UI/aetherisui.png",
-        htmlFile: "Themes/Aetheris UI/aetherisui.html"
+        image: "themes/Aetheris UI/aetherisui.png",
+        htmlFile: "themes/Aetheris UI/aetherisui.html"
     },
     {
         name: "FrostUI Purple",
         author: "zanthana",
-        image: "Themes/FrostUI Purple/frostui.png",
-        htmlFile: "Themes/FrostUI Purple/frostui.html"
+        image: "themes/FrostUI Purple/frostui.png",
+        htmlFile: "themes/FrostUI Purple/frostui.html"
     },
     {
         name: "Catppuccin Mocha",
         author: "fmauneko",
-        image: "Themes/Catppuccin Mocha/catppuccinmocha.png",
-        htmlFile: "Themes/Catppuccin Mocha/catppuccinmocha.html"
+        image: "themes/Catppuccin Mocha/catppuccinmocha.png",
+        htmlFile: "themes/Catppuccin Mocha/catppuccinmocha.html"
     },
     {
         name: "Vanilla UI Dark",
         author: "legiana",
-        image: "Themes/Vanilla UI - Dark/vanillauidark.png",
-        htmlFile: "Themes/Vanilla UI - Dark/vanillauidark.html"
+        image: "themes/Vanilla UI - Dark/vanillauidark.png",
+        htmlFile: "themes/Vanilla UI - Dark/vanillauidark.html"
     },
     {
         name: "Anna Theme (Kirin Edit)",
         author: "serenkumara",
-        image: "Themes/Anna Theme (Kirin Edit)/annathemekirinedit.png",
-        htmlFile: "Themes/Anna Theme (Kirin Edit)/annathemekirinedit.html"
+        image: "themes/Anna Theme (Kirin Edit)/annathemekirinedit.png",
+        htmlFile: "themes/Anna Theme (Kirin Edit)/annathemekirinedit.html"
     },
     {
         name: "Transparent Toolbar and Black Settings",
         author: "realraiden",
-        image: "Themes/Transparent Toolbar and Black Settings/transparentandblack.png",
-        htmlFile: "Themes/Transparent Toolbar and Black Settings/transparentandblack.html"
+        image: "themes/Transparent Toolbar and Black Settings/transparentandblack.png",
+        htmlFile: "themes/Transparent Toolbar and Black Settings/transparentandblack.html"
     }
 ];
 
