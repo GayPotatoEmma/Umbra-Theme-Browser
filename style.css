@@ -68,18 +68,34 @@ header {
     border-radius: 5px;
 }
 
-    /* Image Container (New)*/
+    /* Image Container */
     .theme-detail img {
-        /* Remove fixed width */
-        height: auto; /* Maintain aspect ratio */
+        height: auto;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        flex: 0 0 60%; /* Image takes 60%, won't shrink, won't grow beyond 60% */
+        flex: 0 1 60%; /* Don't shrink below 60%, but allow growing */
+        max-width: 60%; /* Prevent image from overflowing on large screens */
     }
 
 .theme-info {
-    flex: 1; /* Theme info takes remaining space */
+    flex: 1 0 40%; /*  Don't shrink below 40%, but allow growing */
 }
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .theme-detail {
+        flex-direction: column; /* Stack image and info vertically */
+    }
+
+        .theme-detail img {
+            flex: 1 1 100%; /* Image takes full width on small screens */
+            max-width: 100%; /* Image takes full width on small screens */
+        }
+
+    .theme-info {
+        flex: 1 1 100%; /* Info takes full width on small screens */
+    }
+} 
 
     .theme-info h1 {
         margin-bottom: 10px; /* Space below the title */
