@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material UI - Umbra Theme Browser</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header><a href="../../index.html" class="back-button">Back</a></header>
+    <div class="theme-detail">
+        <img src="materialui.png" alt="Material UI Theme Preview">
+        <div class="theme-info">
+            <h1>Material UI</h1>
+            <p class="author">By: cptn_cosmo</p>
+            <p>A theme inspired by the Material UI mod for Final Fantasy XIV.</p>
+            <textarea id="import-code" readonly>jZbLbtpAFIbfhXWL5n7JLiFSglTUKKVqtgamYNX1IGOnraK8e48NzMUeHDYs+D/O/ZzhbbL4/H0+uXmb/MjLjf0zvcvWv7aVbcrN5IYRhRHWjPJPQ/lLvt3VacZWG1O1ktRSaCqUk5Z5XZhVVn3gxWHOkkZCIEnwAHmosk1uyhqPGjpTZJRamr9dRpogcIdREvja1EVemskNJQQTwpkkA25W2IO5a+ralqMOA86neg39aF/PMOWEUjEGv3SgFIJJxUZBb/Ya2lUCGq2wRkj5in1bV7Yo2pJV0GqXFpY6geya36tkk2PERwfNwTyILuZu13X+alwaJGyQ6zAInKFIcBOtGcZYKxGpi6Y2x2mVlGqhYqOuFhCYFDD4iEX6fX7IVkVrgAjNlMIscH67XsNszmxhe7M+L/dN3V9JyEfDYjnVDw4ShDH/u2Gy/vsgG00kYywUkyPej8V3A1GBtKZxQF7mnCulRejAiZppAenwhHfH+Nnqh+CLSqVApLXUK0tAtHlQQUiUabotg1giM64iS2vbmZvOy6ybOB/Y+RgpLlt7l0GSBoeWThdhCJA04FzFZ6XbP2ckeV03W1OPvAI92VfmmAfTx23rYcG9ggGmPPDkA4RBlViKnhR5SCPB2YI2csyc7lYAK8kRiYWo+TDFmqMYSIxpoAYr5K+MUy88E53+ZPfNPi4xbCF8HF/KFDPtvXNQChTEc4kmR9uwP5Bhj75c+E5fmLK5WL6I8IVon3vBVBqLGhlc8CF5ue4OG4wWwRzBnWGYp226fhChYJQZF2gUPJu9jva5KcQpEt1/nmdbmOkyK+H5g0zAECeMnr5+NFnR2dcU9q59UU7CwhTG3O8PnaRhKGGlTtLT7t8hX2fFc1ZuzSbNLLLtR8isyn7WR98M2qUwZyflIat3pjqFpTTFcC7f3/8D</textarea>
+            <button onclick="copyCode()">Copy Code</button>
+        </div>
+    </div>
+    <script>
+        function copyCode() {
+            const codeTextArea = document.getElementById('import-code');
+            codeTextArea.select();
+            document.execCommand('copy');
+        }
+    </script>
+</body>
+</html>

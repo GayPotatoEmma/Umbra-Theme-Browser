@@ -54,6 +54,12 @@ const themeData = [
         author: "realraiden",
         image: "themes/Transparent Toolbar and Black Settings/transparentandblack.png",
         htmlFile: "themes/Transparent Toolbar and Black Settings/transparentandblack.html"
+    },
+    {
+        name: "Material UI",
+        author: "cptn_cosmo",
+        image: "themes/Material UI/materialui.png",
+        htmlFile: "themes/Material UI/materialui.html"
     }
 ];
 
