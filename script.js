@@ -60,6 +60,12 @@ const themeData = [
         author: "cptn_cosmo",
         image: "themes/Material UI/materialui.png",
         htmlFile: "themes/Material UI/materialui.html"
+    },
+    {
+        name: "Material UI - Dark Red",
+        author: "fabunova",
+        image: "themes/Material UI - Dark Red/materialuidarkred.png",
+        htmlFile: "themes/Material UI - Dark Red/materialuidarkred.html"
     }
 ];
 
