@@ -66,6 +66,12 @@ const themeData = [
         author: "fabunova",
         image: "themes/Material UI - Dark Red/materialuidarkred.png",
         htmlFile: "themes/Material UI - Dark Red/materialuidarkred.html"
+    },
+    {
+        name: "Discord",
+        author: "gaypotatoemma",
+        image: "themes/Discord/discord.png",
+        htmlFile: "themes/Discord/discord.html"
     }
 ];
 
