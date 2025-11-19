@@ -1,108 +1,65 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+    const isIndexPage = document.getElementById('theme-grid');
+    const isDetailPage = document.getElementById('detail-title');
 
-const themeData = [
-    {
-        name: "Windows XP",
-        author: "gaypotatoemma",
-        image: "themes/Windows XP/windowsxp.png",
-        htmlFile: "themes/Windows XP/windowsxp.html"
-    },
-    {
-        name: "Windows 98",
-        author: "gaypotatoemma",
-        image: "themes/Windows 98/windows98.png",
-        htmlFile: "themes/Windows 98/windows98.html"
-    },
-    {
-        name: "Ubuntu",
-        author: "gaypotatoemma",
-        image: "themes/Ubuntu/ubuntu.png",
-        htmlFile: "themes/Ubuntu/ubuntu.html"
-    },
-    {
-        name: "Aetheris UI",
-        author: "bonsaibnuuy",
-        image: "themes/Aetheris UI/aetherisui.png",
-        htmlFile: "themes/Aetheris UI/aetherisui.html"
-    },
-    {
-        name: "FrostUI Purple",
-        author: "zanthana",
-        image: "themes/FrostUI Purple/frostui.png",
-        htmlFile: "themes/FrostUI Purple/frostui.html"
-    },
-    {
-        name: "Catppuccin Mocha",
-        author: "fmauneko",
-        image: "themes/Catppuccin Mocha/catppuccinmocha.png",
-        htmlFile: "themes/Catppuccin Mocha/catppuccinmocha.html"
-    },
-    {
-        name: "Vanilla UI - Dark",
-        author: "legiana",
-        image: "themes/Vanilla UI - Dark/vanillauidark.png",
-        htmlFile: "themes/Vanilla UI - Dark/vanillauidark.html"
-    },
-    {
-        name: "Anna Theme (Kirin Edit)",
-        author: "serenkumara",
-        image: "themes/Anna Theme (Kirin Edit)/annathemekirinedit.png",
-        htmlFile: "themes/Anna Theme (Kirin Edit)/annathemekirinedit.html"
-    },
-    {
-        name: "Transparent Toolbar and Black Settings",
-        author: "realraiden",
-        image: "themes/Transparent Toolbar and Black Settings/transparentandblack.png",
-        htmlFile: "themes/Transparent Toolbar and Black Settings/transparentandblack.html"
-    },
-    {
-        name: "Material UI",
-        author: "cptn_cosmo",
-        image: "themes/Material UI/materialui.png",
-        htmlFile: "themes/Material UI/materialui.html"
-    },
-    {
-        name: "Material UI - Dark Red",
-        author: "fabunova",
-        image: "themes/Material UI - Dark Red/materialuidarkred.png",
-        htmlFile: "themes/Material UI - Dark Red/materialuidarkred.html"
-    },
-    {
-        name: "Discord",
-        author: "gaypotatoemma",
-        image: "themes/Discord/discord.png",
-        htmlFile: "themes/Discord/discord.html"
-    }
-];
+    // --- LOGIC FOR INDEX PAGE (GRID) ---
+    if (isIndexPage && typeof themeData !== 'undefined') {
+        const themeGrid = document.getElementById('theme-grid');
 
-    const themeGrid = document.getElementById('theme-grid');
+        // Sort alphabetically
+        themeData.sort((a, b) => a.name.localeCompare(b.name));
 
-        function displayThemes(themes) {
         themeGrid.innerHTML = ''; 
-        themes.forEach(theme => {
-                        const themeElement = document.createElement('a');
-            themeElement.href = theme.htmlFile;             themeElement.classList.add('theme-card');
+        
+        themeData.forEach(theme => {
+            const themeElement = document.createElement('a');
+            themeElement.href = `theme.html?id=${theme.id}`; 
+            themeElement.classList.add('theme-card');
 
-                        const imageElement = document.createElement('img');
+            const imageElement = document.createElement('img');
             imageElement.src = theme.image;
             imageElement.alt = theme.name;
+            // Fallback for broken images
+            imageElement.onerror = () => imageElement.src = 'https://placehold.co/400x225?text=No+Image';
+            
             themeElement.appendChild(imageElement);
 
-                        const titleElement = document.createElement('h2');
+            const titleElement = document.createElement('h2');
             titleElement.textContent = theme.name;
             themeElement.appendChild(titleElement);
 
-                        themeGrid.appendChild(themeElement);
+            themeGrid.appendChild(themeElement);
         });
     }
 
-    themeData.sort((a, b) => {
-        const nameA = a.name.toLowerCase();
-        const nameB = b.name.toLowerCase();
-        if (nameA < nameB) return -1;
-        if (nameA > nameB) return 1;
-        return 0;
-    });
-    displayThemes(themeData);
+    // --- LOGIC FOR THEME DETAIL PAGE ---
+    if (isDetailPage && typeof themeData !== 'undefined') {
+        const urlParams = new URLSearchParams(window.location.search);
+        const themeId = urlParams.get('id');
 
+        const theme = themeData.find(t => t.id === themeId);
+
+        if (theme) {
+            document.title = `${theme.name} - Umbra Theme Browser`;
+            document.getElementById('detail-image').src = theme.image;
+            document.getElementById('detail-title').textContent = theme.name;
+            document.getElementById('detail-author').textContent = theme.author;
+            document.getElementById('detail-desc').textContent = theme.description || "No description provided.";
+            document.getElementById('import-code').value = theme.code || "No code provided.";
+        } else {
+            document.querySelector('.theme-detail').innerHTML = '<h1>Theme not found.</h1><p>Please go back to the home page.</p>';
+        }
+    }
 });
+
+function copyCode() {
+    const codeTextArea = document.getElementById('import-code');
+    codeTextArea.select();
+    document.execCommand('copy');
+    
+    const btn = document.querySelector('button');
+    const originalText = btn.innerText;
+    btn.innerText = "Copied!";
+    setTimeout(() => btn.innerText = originalText, 2000);
+}

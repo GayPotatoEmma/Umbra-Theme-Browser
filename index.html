@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umbra Theme Browser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <!-- Open Graph Meta Tags -->
@@ -17,11 +20,17 @@
     <header>
         <div class="main-header-title"> <h1>Umbra Theme Browser</h1> </div>
     </header>
+    
+    <!-- Themes injected by script.js -->
     <main id="theme-grid">
     </main>
+    
     <footer>
-        <a href="about.html">About</a>
+        <a href="about.html">About / How to Install</a>
     </footer>
+
+    <!-- Load Data first, then Logic -->
+    <script src="themes.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
