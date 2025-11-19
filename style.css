@@ -32,7 +32,7 @@ body {
     position: relative;
 }
 
-/* Background */
+/* Background Layer 1: Blurred Image */
 body::before {
     content: "";
     position: fixed;
@@ -47,11 +47,11 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     
-    filter: blur(8px); 
+    filter: blur(16px) saturate(0.5) brightness(0.5); 
     transform: scale(1.05); 
 }
 
-/* Overlay */
+/* Background Layer 2: Dot Pattern Overlay */
 body::after {
     content: "";
     position: fixed;
@@ -63,7 +63,6 @@ body::after {
     
     background-image: 
         url('assets/dot-2x.png'), 
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
         
     background-repeat: repeat, no-repeat;
     background-position: top left, center;
@@ -163,7 +162,7 @@ header {
     box-shadow: 0 0 15px rgba(224, 192, 112, 0.2);
 }
 
-/* Theme Tags */
+/* --- TAG STYLES --- */
 .tag-container {
     display: flex;
     gap: 8px;
@@ -173,10 +172,10 @@ header {
 
 .theme-tag {
     font-size: 0.75rem;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 12px;
     background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(224, 192, 112, 0.1);
+    border: 1px solid rgba(224, 192, 112, 0.15);
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -193,8 +192,18 @@ header {
     width: 100%;
 }
 
-.theme-card {
-    background: var(--glass-bg);
+/* 
+   UPDATED THEME CARD 
+   - Removed 'overflow: hidden' to prevent border-radius clipping bugs with blur
+   - Added 'isolation: isolate' to force new stacking context
+   - Added 'backface-visibility' to fix flickering
+   - Changed background to linear-gradient to force consistent rendering
+*/
+.theme-card,
+.theme-card:visited,
+.theme-card:active {
+    /* Use linear-gradient trick to force consistent glass rendering */
+    background: linear-gradient(var(--glass-bg), var(--glass-bg));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
@@ -202,17 +211,24 @@ header {
     padding: 15px;
     text-decoration: none;
     color: var(--text-main);
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s;
-    box-shadow: var(--glass-shadow);
+    
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    
+    /* RENDERING FIXES */
+    isolation: isolate;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s;
+    box-shadow: var(--glass-shadow);
 }
 
 .theme-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateZ(0);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
     border-color: rgba(224, 192, 112, 0.4);
+    background: linear-gradient(var(--glass-bg), var(--glass-bg));
 }
 
 .theme-card img {
@@ -257,6 +273,10 @@ header {
     border-radius: 24px;
     box-shadow: var(--glass-shadow);
     align-items: flex-start;
+    
+    /* Apply same rendering fixes to detail card */
+    isolation: isolate;
+    transform: translateZ(0);
 }
 
 .theme-detail:not(:has(img)) {
@@ -325,6 +345,33 @@ header {
     text-shadow: 0 0 8px var(--umbra-gold);
 }
 
+/* --- MORE FROM AUTHOR SECTION --- */
+#author-themes-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.section-title {
+    color: var(--text-main);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+.section-title span {
+    color: var(--umbra-gold);
+}
+
+#author-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Utility */
 #import-code {
     width: 100%;
     height: 120px;
@@ -420,5 +467,9 @@ footer a:hover {
     #theme-grid {
         padding: 20px;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    #author-themes-container {
+        padding: 20px;
     }
 }

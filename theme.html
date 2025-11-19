@@ -20,12 +20,23 @@
             <h1 id="detail-title">Loading...</h1>
             <p class="author">By: <span id="detail-author">...</span></p>
             
+            <!-- Tag Container -->
+            <div id="detail-tags" class="tag-container" style="margin-bottom: 20px;"></div>
+            
             <h3>Description</h3>
             <p id="detail-desc">...</p>
 
             <h3>Import Code</h3>
             <textarea id="import-code" readonly></textarea>
             <button onclick="copyCode()">Copy Code</button>
+        </div>
+    </div>
+
+    <!-- NEW SECTION: MORE FROM AUTHOR -->
+    <div id="author-themes-container" style="display: none;">
+        <h2 class="section-title">More from <span id="more-author-name"></span></h2>
+        <div id="author-grid">
+            <!-- Related themes injected here -->
         </div>
     </div>
 
