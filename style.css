@@ -121,6 +121,67 @@ header {
     transform: translateY(-1px);
 }
 
+/* --- FILTER SYSTEM STYLES --- */
+#filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px 20px 0 20px;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-stack);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 0; 
+    backdrop-filter: blur(5px);
+    box-shadow: none;
+    width: auto; 
+}
+
+.filter-btn:hover {
+    background: rgba(224, 192, 112, 0.15);
+    color: #fff;
+    transform: translateY(-2px);
+    border-color: var(--umbra-gold);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, rgba(224, 192, 112, 0.4), rgba(224, 192, 112, 0.1));
+    border-color: var(--umbra-gold);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(224, 192, 112, 0.2);
+}
+
+/* Theme Tags */
+.tag-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.theme-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(224, 192, 112, 0.1);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* --- GRID LAYOUT --- */
 #theme-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
